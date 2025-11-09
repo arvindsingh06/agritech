@@ -4,7 +4,7 @@ const { upload, ensureFarmer, renderDashboard, createProduct, updateProduct, del
 
 router.get('/dashboard', ensureFarmer, renderDashboard);
 router.post('/products', ensureFarmer, upload.single('image'), createProduct);
-router.put('/products/:id', ensureFarmer, upload.single('image'), updateProduct);
+router.post('/products/:id', ensureFarmer, upload.single('image'), updateProduct);
 router.delete('/products/:id', ensureFarmer, deleteProduct);
 
 module.exports = router;

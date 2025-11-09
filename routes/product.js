@@ -83,7 +83,7 @@ router.post('/', upload.single('image'), async (req, res, next) => {
   } catch (err) { next(err); }
 });
 
-router.put('/:id', upload.single('image'), async (req, res, next) => {
+router.post('/:id', upload.single('image'), async (req, res, next) => {
   try {
     const updates = { ...req.body };
     if (req.file) {
